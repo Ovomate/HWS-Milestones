@@ -10,9 +10,6 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     
-    var memeHeader = ""
-    var memeFooter = ""
-    
     let imageView : UIImageView = {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
@@ -49,7 +46,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         picker.allowsEditing = true
         present(picker, animated: true)
     }
-    
     
     func inputHeadeAndFooter(photo: UIImage){
         let ac = UIAlertController(title: "Enter meme header & footer", message: nil, preferredStyle: .alert)
@@ -114,11 +110,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         dismiss(animated: true, completion: { [weak self] in
             
             self?.inputHeadeAndFooter(photo: photo)
-            
         })
         
     }
-    
     
     func setupView(){
         view.addSubview(imageView)
